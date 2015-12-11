@@ -26,7 +26,7 @@ public class Application {
         
         HelpFormatter formatter = new HelpFormatter();
         if (cmd.getArgs().length == 0) {
-            formatter.printHelp("myapp", "Create a Spring Boot banner from an image", options, null, true);
+            formatter.printHelp("java -jar image2springbanner.jar", "Create a Spring Boot banner from an image", options, null, true);
             return;
         }
         
