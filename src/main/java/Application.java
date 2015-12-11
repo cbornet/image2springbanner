@@ -19,6 +19,7 @@ public class Application {
         Options options = new Options();
         options.addOption("M", "max-width", true, "maximum width in characters of banner (default is 72)");
         options.addOption("d", "dark", false, "whether to invert image for a dark background. (default is false)");
+        options.addOption("c", "cie94", false, "whether to use CIE94 algo (default is false)");
         options.addOption("r", "aspect-ratio", true, "correction to makes sure height is correct to accomodate the fact that fonts are taller than they are wide. (default is 0.5)");
         options.addOption("o", "output", true, "output file path (default is ./banner.txt)");
         CommandLineParser parser = new DefaultParser();
@@ -35,7 +36,8 @@ public class Application {
         String bannerStr = banner.printBanner(
                 Integer.parseInt(cmd.getOptionValue("M", DEFAULT_MAX_WIDTH)),
                 Double.parseDouble(cmd.getOptionValue("r", DEFAULT_ASPECT_RATIO)), 
-                cmd.hasOption("d"));
+                cmd.hasOption("d"),
+                cmd.hasOption("c"));
         writer.println( bannerStr );
         writer.close();
         
