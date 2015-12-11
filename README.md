@@ -14,11 +14,8 @@ mvn package
 The jar will be in the ```target``` directory
 ## Usage
 ```shell
-java -jar bin/image2springbanner.jar
-```
-```shell
-usage: java -jar image2springbanner.jar [-d] [-M <arg>] [-o <arg>] [-r
-       <arg>]
+usage: java -jar image2springbanner.jar <IMAGE_FILE> [-d] [-M <arg>] [-o
+       <arg>] [-r <arg>]
 Create a Spring Boot banner from an image
  -d,--dark                 whether to invert image for a dark background.
                            (default is false)
@@ -29,3 +26,8 @@ Create a Spring Boot banner from an image
                            accomodate the fact that fonts are taller than
                            they are wide. (default is 0.5)
 ```
+Example :
+```
+java -jar image2springbanner.jar src/main/resources/banner.jpg -M140 -d -o src/main/resources/banner.txt
+```
+
